@@ -1,0 +1,17 @@
+<h2>Products</h2>
+
+<form method="get">
+  <select name="category">
+    <option value="">All</option>
+    {% for category in categories %}
+      <option value="{{ category.id }}">{{ category.name }}</option>
+    {% endfor %}
+  </select>
+  <button type="submit">Filter</button>
+</form>
+
+<ul>
+  {% for product in products %}
+    <li>{{ product.name }} - ₹{{ product.price }}</li>
+  {% endfor %}
+</ul>
